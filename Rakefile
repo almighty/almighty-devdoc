@@ -55,7 +55,7 @@ desc 'Generate site from Travis CI and publish site'
 task :travis do
 
   # if this is a pull request, just error check
-  if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
+  i f ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
     puts 'Pull request detected. Executing build only.'
     deploy = false
   elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^master$/).length > 0
@@ -72,7 +72,7 @@ task :travis do
   system "bundle exec jekyll build"
   
   if deploy
-    Rake::Task["deploy"].inv oke
+    Rake::Task["deploy"].invoke
   end
   
 end
