@@ -72,7 +72,7 @@ task :travis do
   system "bundle exec jekyll build"
   
   if deploy
-    Rake::Task["deploy"].invoke
+    Rake::Task["deploy"].inv oke
   end
   
 end
