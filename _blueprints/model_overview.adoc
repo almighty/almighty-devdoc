@@ -1,7 +1,4 @@
----
----
-
-== Model Overview
+= Model Overview
 
 [graphviz, do, svg]
 ----
