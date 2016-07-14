@@ -63,6 +63,7 @@ API calls.
 [[auth-work-around]]
 Auth work around
 
+[source,golang,numbered]
 ----
 func main() {
   ts := oauth2.StaticTokenSource(
@@ -160,6 +161,7 @@ requested in the authenticate method.
 [[auth-work-around-1]]
 Auth Work around
 
+[source,golang,numbered]
 ----
 package main
 
@@ -214,7 +216,7 @@ private boards.
 [[trello-golang-libraries]]
 Trello Golang libraries
 ~~~~~~~~~~~~~~~~~~~~~~~
-[cols="7",options="header",width="50%",frame="topbot",options="header,footer"]
+[cols="7",options="header",]
 |===================================================================
 |  | Completeness | Style | Community | Feature Support | Auth Support | Version
 
