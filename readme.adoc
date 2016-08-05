@@ -17,7 +17,7 @@ bundle install
 bundle exec jekyll build
 ```
 
-In case of Fedora 24, one will need following. [Tracked from [issue-43](https://github.com/almighty/almighty-devdoc/issues/43), [issue-44](https://github.com/almighty/almighty-devdoc/issues/44)]
+In case of Fedora 24, one will need following. Tracked from [issue-43](https://github.com/almighty/almighty-devdoc/issues/43), [issue-44](https://github.com/almighty/almighty-devdoc/issues/44)
 ```
 sudo dnf install gcc ruby-devel gcc-c++ redhat-rpm-config 'graphviz*'
 ```
