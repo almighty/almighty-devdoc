@@ -2,10 +2,10 @@
 This is a working document to come up with a system for describing and defining types of work items. 
 
 == Vision
-There is a central work item (micro-)service that serves as a common platform for storage and query of work items. Client services extend the basic work item types to offer business functionality like different ways of planning (scrum, waterfall, etc.), testing, ideation, etc. These service in turn are the basis for our UI.
+There is a central work item (micro-)service that serves as a common platform for storage and query of work items. Client services extend the basic work item types to offer business functionality like different ways of planning (scrum, waterfall, etc.), testing, ideation, etc. These services in turn are the basis for our UI.
 
 == Goals
-Why do we even have such a thing like a work item type? Why not just store arbitrary json structures? For one, it allows us to optimize storage of work items, for example setting indices on fields in the work items. Work item types also restrict the work items to have a form which we can store efficiently. Work item types can also be queried, as in "give me all work items of type X". This will allow clients to only select the work items they can work with and lets them assume presence of needed fields. 
+Why do we even have such a thing like a work item type? Why not just store arbitrary JSON structures? For one, it allows us to optimize storage of work items, for example setting indices on fields in the work items. Work item types also restrict the work items to have a form which we can store efficiently. Work item types can also be queried, as in "give me all work items of type X". This will allow clients to only select the work items they can work with and lets them assume presence of needed fields. 
 
 == Design Principles
 The less privileged components we have, the easier it will be to extend the system (eat our own dogfood). This means keep our core small and use standard extension mechanisms to build advanced functionality.
@@ -19,8 +19,8 @@ Almost everything is a work item, e.g.
 * A reference to a bugzilla bug
 * A task
 * A planning board
-* A release (“Neon.2”)
-* A version (“3.7.2.Snapshot”)
+* A release ("Neon.2")
+* A version ("3.7.2.Snapshot")
 * A git repo
 * A svn repo: repos are points of extension, thus must be work items
 
@@ -56,7 +56,7 @@ A value from among a given list of values of a simple type
 The set of work item types per Project is expected to be small (< 50) and fixed.
 
 == Service Requirements
-Different services will want different fields with different semantics in their work items. For example, both awaterfall and a scrum planning will have a "task" item that includes fields like "owner", "severity", "description", etc. However, they will also have fields that differ, like "target release" or "sprint". 
+Different services will want different fields with different semantics in their work items. For example, both a waterfall and a scrum planning will have a "task" item that includes fields like "owner", "severity", "description", etc. However, they will also have fields that differ, like "target release" or "sprint". 
 One challenge is to reuse fields where they mean the same thing. When we are looking for all fields with the owner "tmaeder", we don't want to have to search different fields like "scrum.owner" and "waterfall.owner", etc. 
 Another property we would like is for algorithms (services) to be able do work against a large range of work items. For example, a scrum work item might have fields owner, state and sprint. When we decide to plan our project with a kanban board from now on, we would like to reuse the owner and stare fields. In order to implement things like this, services will often have to query for item of a certain type: if a work item does not contain a "owner" fields, for example, it cannot be planned on a scrum board. I propose the following to address these requirements.
 
@@ -66,7 +66,7 @@ If two work item types define the same field (by name), they are considered to d
 As we extend the system, the authors of these extensions are encouraged to publish their own well known field names in a common registry (“scrum.sprint”, “scrum.storyPoints”, “scrum.backlogorder”).
 
 === Basic Types
-The central system will predefine a number of basic work item types like (think "issue", "sprint", "release", "user story", "requirement") in order to enforce a certain common base of fields for a given type of work item. The system will have a hierarchy of predefined types: a root type which contains only very basic fields (last change date, last change user, etc.) and more specific types (like "task"). Furthermore, additional field names and types may be published in order to encourage shared usage of them (think "planning.storyPoints", etc.). 
+The central system will predefine a number of basic work item types (think "issue", "sprint", "release", "user story", "requirement") in order to enforce a certain common base of fields for a given type of work item. The system will have a hierarchy of predefined types: a root type which contains only very basic fields (last change date, last change user, etc.) and more specific types (like "task"). Furthermore, additional field names and types may be published in order to encourage shared usage of them (think "planning.storyPoints", etc.). 
 
 === Type Inheritance
 New Types can be added by inheriting from existing types. Fields can be added, but they must conform to the field name rules system-wide. Type inheritance is used to define a special kind of work item that can be used in a new way. 
