@@ -1,0 +1,6 @@
+= UX Overview
+
+UX is broken down into three different areas:
+    - discovery
+    - design
+    - usability testing 
