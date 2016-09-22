@@ -16,7 +16,7 @@ Some links might not be fully public, but we will get them move over as soon as 
 
 We are currently on hipchat (almighty room), with plans on moving to public hosted mattermost or similar soon(tm)!
 
-Mailing list - we have a public mailing list `https://www.redhat.com/mailman/listinfo/almighty-public[almighty-public@redhat.com]`
+Mailing list - we have a public mailing list `mailto:almighty-public@redhat.com[almighty-public@redhat.com]`.  You may subscribe `https://www.redhat.com/mailman/listinfo/almighty-public[here]`.
 
 == Team
 
@@ -35,7 +35,6 @@ Sarajane Clark (SJ), User Research + UX, , 20%, EST,
 https://github.com/mindreeper2420[Adam Jolicoeur], Interaction Designer, , 100%, EST,
 https://github.com/gunjansobhani[Gunjan Sobhani], UX Intern, , TBD%, EST,
 https://github.com/Ritsyy[Richa Rupela], Dev intern, Backend, 100%, IST,
-https://github.com/gunjansobhani[Gunjan Sobhani], UX Intern, , , IST,
 https://github.com/kwk[Konrad Kleine], Dev, Backend, 100%, CET,
 Ranjith Varakan, Scrum Master, , , IST,
 https://github.com/ldimaggi[Len DiMaggio], QE, UI/Backend, 50%, EST,
