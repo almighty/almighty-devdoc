@@ -14,6 +14,7 @@ RUN dnf install -y \
       python-blockdiag \
       tar \
       which \
+      git \
     && dnf clean all
 
 #----------------------------------------------------------
