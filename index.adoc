@@ -20,7 +20,8 @@ Mailing list - we have a public mailing list `mailto:almighty-public@redhat.com[
 
 == Development
 
-link:development/dod.html[Definitions of Done] (DoD).
+* link:development/dod.html[Definitions of Done] (DoD).
+* link:development/uximplementation.html[UX Implementation Requirments for Userstories].
 
 == Team
 

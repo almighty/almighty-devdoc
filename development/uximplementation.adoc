@@ -1,0 +1,13 @@
+== UX Implementation in Userstories
+
+Requirements on implementing the UX depends on availability of finished UX designs. As there are different stages of UX design with different availabilities, we decided to explicitly state the requirement of implementing the UX as part of a userstory. 
+
+Userstories will therefore state the required UX implementation needed for completing the story. The different UX implementation "classes" are described as follows:
+
+* **Workflow**: describes the usage flow and the functional behaviour of the view. Does not define visual design, positioning of elements or other design. Stories requiring this level of UX implementation are required to have all UX flows and functions in place, but without recognition of design and placement of elements.
+
+* **Wireframe**: in addition to the workflow, the wireframe defines preliminary positioning of elements like buttons, lists, input fields or other widgets and gives a basic definition of the look of a view. Stories requiring this class are required to have the preliminary placement in place, in addition to the workflow requirements.
+
+* **Patternfly Example Design**: this class defines a wireframe with the default Patternfly design. A story requiring this "class" is required to use the standard Patternfly CSS definitions. Stories requiring this class must have the wireframe requirements in place as well as the Patterfly visual look.
+
+* **Visual Design**: a story requiring visual design UX is required to implement the final planned visual design that represents our product.
