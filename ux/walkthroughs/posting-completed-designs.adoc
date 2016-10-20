@@ -12,12 +12,10 @@ _*(artifacts include materials related to the design, discovery, workflows, wire
 
 . Post *InVision links* in the UXD JIRA stories
 . Post JIRA link in GIT story in almighty-ux
-. Once your story is pulled into an AppDev sprint, create an issue that includes a link to the JIRA story on https://github.com/almighty/almighty-ux/issues[https://github.com/almighty/almighty-ux/issues]. 
+- Once your story is pulled into an AppDev sprint, create an issue that includes a link to the JIRA story on https://github.com/almighty/almighty-ux/issues[https://github.com/almighty/almighty-ux/issues].
 . Post artifact links in GIT devdocs
-  .. Review how to update devdocs in the https://docs.google.com/a/redhat.com/document/d/1po3E8Jya2c3OeT2KAex05-k3aw-9dV6SyRSmmJTuV28/edit?usp=sharing[GitHub + ALM + UX document]. 
   .. Based on the type of artifact you want to link to, determine which ASCII doc** should be updated.
-+
-- Design 
+
 +
      - Wireframes: link:almighty-devdoc/ux/design/wireframes/wireframes.adoc[almighty-devdoc/ux/design/wireframes/wireframes.adoc]
 +
@@ -50,5 +48,5 @@ Once a design artifact (whether new or updated) has been posted to InVision, let
 
 Once the design is complete and it has been reviewed and agreed upon by development and stakeholders, notify development that it’s ready.
 
-. On the pertinent issue in GIT, add the "Ready for Dev" label to the pertinent issue in GIT.
+. On the pertinent issue in GIT, add the "Ready for Dev" label.
 . On that same issue, add a comment mentioning @joshuawilson and the developer on the feature.
