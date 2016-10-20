@@ -1,3 +1,4 @@
-= UX Wwalkthroughs
+= UX Walkthroughs
 
 - link:invision-walkthrough.adoc[How to use InVision]
+- link:posting-completed-designs.adoc[Posting Completed Designs]
