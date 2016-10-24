@@ -1,0 +1,59 @@
+= Planning and Sprint Process
+
+We use a tailored Scrum process to get things done. The process uses three 
+planning sessions in addition to the usual review and retrospective: the 
+gooming, the planning 1 and the planning 2. All scheduled meetings need a few
+prepared artifacts and some team preparation.
+
+== Grooming
+
+In the first week of the three week sprint, the grooming with the full team should
+introduce the team to the next stories in the pipeline. The main goal is to start
+discussion on the stories among the team and get their input for finalizing the
+stories. In addition, the grooming assigns preliminary owners to stories. The owners
+are responsible for making sure the team gets a clear understanding of the contents
+of the story.
+
+* Scope: full team.
+* Goal: introduction to backlog stories, start of discussion on story contents for next sprint.
+* Precondition: enough stories in backlog with "release candidate" status.
+* Postcondition: discussion is starting in comments of stories, with story owner as key person; team has overview of goal of stories.
+
+== Planning 1
+
+At the beginning of a sprint, the planning 1 meeting focusses on the estimation and 
+acceptance into the sprint by the team. The team agrees on an effort estimation for
+individual stories and accepts them as work for the coming sprint iteration. The meeting
+should not focus on story content discussions. These topics should happen beween the grooming
+and the planning 1 with the product owners constantly reworking the stories until its final,
+discussed form available on planning 1. The story owner is set for the sprint, which may or
+may not be the preliminary owner from the grooming. The owner is the primary contact for questions
+on the content of stories. The owner is also the primary responsible person for getting the story
+implemented in the sprint. This does not touch the team's responsibilty for making the sprint a success.
+
+* Scope: full team.
+* Goal: estimation of stories, acceptance into sprint following the team velocity.
+* Precondition: prepared, final stories in the backlog, with discussion results worked into them.
+* Postconditon: estimated and accepted set of stories for the sprint, owner of stories set.
+
+== Planning 2
+
+The planning 2 is the task breakdown of the stories and is done within the sub-teams that work
+on specific stories. Primary goal of the planning 2 is the task breakdown for the individual stories.
+Responsible for preparing this meeting and to gather results are the story owners. Story owners
+have to prepare a suggested task breakdown to start discussion and to create the accepted, discussed
+task list in the tracking system after planning 2. For carry-over stories from last sprint, this may
+require aquiring existing tasks along with current state from the tracking system to be worked into the
+suggested task lists.
+
+* Scope: individual sub-teams.
+* Goal: task breakdown.
+* Precondition: suggested task breakdowns by the story owners.
+* Postcondition: accepted task breakdowns as issues in the tracking system.
+
+
+
+
+
+
+
