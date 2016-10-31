@@ -24,5 +24,6 @@ digraph G {
 
 	LINK -> WORKITEM
 	LINK -> LINK_TYPE
+	LINK_TYPE -> LINK_CATEGORY
 }
 ----
