@@ -7,26 +7,29 @@ digraph G {
 		shape = "record"
 	]
 
-  IDENTITY [label = "{Identity|}"]
   USER [label = "{User|}"]
+  LOGIN [label = "{Login|}"]
   TEAM_ROLE [label = "{TeamRole|}"]
   WORKITEM [label = "{WorkItem|}"]
   TEAM [label = "{Team|}"]
   PERMISSION [label = "{Permission|}"]
   PROJECT [label = "{Project|}"]
   WORKITEM_TYPE [label = "{WorkItemType|}"]
-  CATEGORY [label = "{WorkItemFamily|}"]
+  CATEGORY [label = "{Category|}"]
   LINK [label = "{Link|}"]
   LINK_TYPE [label = "{LinkType|}"]
   REPOSITORY [label = "{Repository|}"]
+  ORGANIZATION [label = "{Organization|}"]
+  AREA [label = "{Area|}"]
+  ITERATION [label = "{Iteration|}"]
 
 	edge [
 		arrowhead = "none"
 		headlabel = "n"
 		taillabel = "1"
 	]
-	IDENTITY -> TEAM_ROLE
-	USER -> WORKITEM
+	USER -> TEAM_ROLE
+	LOGIN -> WORKITEM
 	TEAM_ROLE -> TEAM
 	TEAM -> PROJECT
 	PROJECT -> WORKITEM
@@ -34,13 +37,20 @@ digraph G {
 	WORKITEM_TYPE -> WORKITEM
 	LINK_TYPE -> LINK
 	CATEGORY -> WORKITEM_TYPE
+	ORGANIZATION -> ORGANIZATION
+	AREA -> AREA
+	ITERATION -> ITERATION
+	TEAM -> ORGANIZATION
+	PROJECT -> ORGANIZATION
+	WORKITEM -> AREA
+	WORKITEM -> ITERATION
 
 	edge [
 		arrowhead = "none"
 		headlabel = "1"
 		taillabel = "1"
 	]
-	IDENTITY -> USER
+	USER -> LOGIN
 
 	edge [
 		arrowhead = "none"
@@ -48,6 +58,7 @@ digraph G {
 		taillabel = "n"
 	]
 	TEAM_ROLE -> PERMISSION
+	PERMISSION -> PROJECT
 
 	edge [
 		arrowhead = "none"
