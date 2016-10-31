@@ -29,7 +29,6 @@ digraph G {
 		taillabel = "1"
 	]
 	USER -> TEAM_ROLE
-	LOGIN -> WORKITEM
 	TEAM_ROLE -> TEAM
 	TEAM -> PROJECT
 	PROJECT -> WORKITEM
@@ -44,13 +43,13 @@ digraph G {
 	PROJECT -> ORGANIZATION
 	WORKITEM -> AREA
 	WORKITEM -> ITERATION
+	USER -> LOGIN
 
 	edge [
 		arrowhead = "none"
 		headlabel = "1"
 		taillabel = "1"
 	]
-	USER -> LOGIN
 
 	edge [
 		arrowhead = "none"
@@ -59,6 +58,8 @@ digraph G {
 	]
 	TEAM_ROLE -> PERMISSION
 	PERMISSION -> PROJECT
+	LOGIN -> WORKITEM
+	AREA -> TEAM
 
 	edge [
 		arrowhead = "none"
