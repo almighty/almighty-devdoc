@@ -14,7 +14,7 @@ The description of a type does not have to be the same as the construction of a 
 == What is a Work Item?
 Almost everything is a work item, e.g.
 * A sprint
-* A bug
+* A bug 
 * A build
 * A reference to a bugzilla bug
 * A task
@@ -63,7 +63,7 @@ Another property we would like is for algorithms (services) to be able do work a
 == Work Item Type Definition
 === Field Names
 If two work item types define the same field (by name), they are considered to designate the same field. If the fields have different types, it is an error. In order to allow for wide sharing of fields among services, the base system publishes a list of common field names (system.owner, system.priority, etc.). 
-As we extend the system, the authors of these extensions are encouraged to publish their own well known field names in a common registry (“scrum.sprint”, “scrum.storyPoints”, “scrum.backlogorder”).
+As we extend the system, the authors of these extensions are encouraged to publish their own well known field names in a common registry ("scrum.sprint", "scrum.storyPoints", "scrum.backlogorder").
 
 === Basic Types
 The central system will predefine a number of basic work item types (think "issue", "sprint", "release", "user story", "requirement") in order to enforce a certain common base of fields for a given type of work item. The system will have a hierarchy of predefined types: a root type which contains only very basic fields (last change date, last change user, etc.) and more specific types (like "task"). Furthermore, additional field names and types may be published in order to encourage shared usage of them (think "planning.storyPoints", etc.). 
