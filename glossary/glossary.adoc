@@ -9,25 +9,6 @@ Blue/Green deployment strategy:: In this deployment strategy two target environm
 Continuous value delivery:: Refers to the idea of delivering working software features at the end of each sprint in a scrum agile process
 Continuous deployment:: Refers to the process of automatically deploying software changes in a system as they occur instead of larger release cycles.
 Canary deployment strategy:: In this deployment strategy , some fraction of the deployment environment is updated with a new change. If all goes well, then the rest of the environment is updated. This allows for testing of experimental features in a production environment.
-Collaboration Space:: A container for related data within a defined scope. It is up to the creator of the collaboration space to define the scope. The scope can be very small ("this Collaboration Space is used to manage the development of HelloWorld") or very large ("this Collaboration Space is used to manage the development of all of Apache OpenOffice"). A Collaboration Space has a name and a description and may contain:
-+
-* work item definitions 
-* work items
-* Codebases
-* Workspaces
-* Pipeline Definitions
-* Teams.
-+
-By default it contains:
-+
-* one Area ("/" by default)
-* one Iteration. 
-+
-A Collaboration Space is created from a Process Template, which seeds the Collaboration Space with an initial set of Work Item Types and various other artifacts (e.g. an initial set of Iterations). Collaboration Spaces are either Public or Private. [Public collaboriation spaces permit anonymous viewing of all content within the collaboration space, although creation of content in the collaboration space may be controlled/limited by collaboration space administrators. Private collaboration spaces permit essentially any access model.]
-+
-Another way to think of a Collaboration Space is to consider a 'nested dolls' view of Pizza the Hutt. The top-most container is Pizza the Hutt (the overall SaaS). Within Pizza the Hutt are (1) Users, (2) Organizations and (3) Process Templates. Both Users and Organizations may contain Collaboration Spaces. Essentially everything else in the SaaS is contained within a Collaboration Space. So the Pizza the Hutt Collaboration Space is a container for everything in Pizza the Hutt, except for Users, Organizations and Process Templates.
-+
-Collaboration Spaces are sometimes simply refered to as spaces. E.g. "the HelloWorld collaboration space" and "the HelloWorld space" refer to the same thing.
 Dashboard:: A user interface concept in which a person can view a collections of important aspects of a system on a single page in near real time, just as you would in a car dashboard.
 DevOps:: A word used to describe the combination of  development and operations responsibilities into a single responsibility performed by a cross functional team.
 Experience:: The user centric usage experience that the user has while interacting with the system
@@ -108,7 +89,24 @@ Service, Hosted First Party:: A hosted service, which additionally is:
 Service, Hosted Third Party:: A hosted service, which additionally is:
 * Executed within a namespace belonging to the user, in the security context of the user
 SaaS:: Software as a service
-Space:: See Collaboration Space
+Space:: A container for related data within a defined scope. It is up to the creator of the Space to define the scope. The scope can be very small ("this Space is used to manage the development of HelloWorld") or very large ("this Space is used to manage the development of all of Apache OpenOffice"). A Space has a name and a description and may contain:
++
+* work item definitions 
+* work items
+* Codebases
+* Workspaces
+* Pipeline Definitions
+* Teams.
++
+By default it contains:
++
+* one Area ("/" by default)
+* one Iteration. 
++
+A Space is created from a Process Template, which seeds the Space with an initial set of Work Item Types and various other artifacts (e.g. an initial set of Iterations). Spaces are either Public or Private. [Public Spaces permit anonymous viewing of all content within the Space, although creation of content in the Space may be controlled/limited by Space administrators. Private Spaces permit essentially any access model.]
++
+Another way to think of a Space is to consider a 'nested dolls' view of Pizza the Hutt. The top-most container is Pizza the Hutt (the overall SaaS). Within Pizza the Hutt are (1) Users, (2) Organizations and (3) Process Templates. Both Users and Organizations may contain Spaces. Essentially everything else in the SaaS is contained within a Space. So the Pizza the Hutt Space is a container for everything in Pizza the Hutt, except for Users, Organizations and Process Templates.
++
 Stack:: A set of technologies chosen to satisfy a particular software implementation
 Sprint:: In agile terms , a single iteration of delivery in which features are pulled from a backlog, estimated, implemented, tested, delivered according to some acceptance criteria.
 Team stakeholder:: A party with influence who has a vested interest in the success of the project.
