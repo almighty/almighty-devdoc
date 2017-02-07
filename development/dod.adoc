@@ -16,3 +16,6 @@ are mandatory for all implementations:
 * The UI implementation follows the UX guidelines in features, usability, and design. If not, state reason (UX not available yet for example).
 * To all web resources in the application can be deep linked to. URL patterns are stable and clean.
 * Any additions or changes to code do not introduce functional, performance/throughput, or security regressions.
+* Integration tests (including install and upgrade tests) must be written and running cleanly in the CI environment.
+* User docs must be complete and reviewed.
+
