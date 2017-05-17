@@ -32,6 +32,45 @@ User --> Notification: Recived/Viewed
 
 * All actions within the system could go to the notification service
 
+== Notification delivery mechanisms
+
+1. In-app Toast Notification
+2. Email Notification
+3. https://www.w3.org/TR/notifications/[Web Notification]
+4. https://www.w3.org/TR/push-api/[Push API]
+
+=== In-app Toast Notification
+
+This type of notification will be displayed in the browser page after
+user logged in.
+
+== Database design
+
+
+Table: notification_types
+
+* id
+* name
+
+Table: notifications
+
+* id
+* user id
+* notification_type
+* notification #JSONB 
+* read #boolean
+
+== What should trigger notification
+
+1. When user assigned a WI
+2. When new comment added for the assigned or created item
+3. When description changes for the assigned or created item
+
+== API
+
+Use WebSockets for API
+https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+
 == References
 
 * https://medium.com/@intercom/designing-smart-notifications-36336b9c58fb#.ehe3vdiq6[Designing smart notifications
