@@ -1,0 +1,27 @@
+HTTP/1.1 201 Created
+Location: http://example.com/api/links/c6923e37-5111-4972-8397-a0009c8425a5
+Content-Type: application/vnd.api+json
+
+{
+  "data": {
+    "type": "linktypes",
+    "id": "c6923e37-5111-4972-8397-a0009c8425a5",
+    "attributes": {
+      "source": "6ae6cb8f-dfc6-4217-b057-1e8639042cb5",
+      "target": "82e24c1b-af7b-4612-97da-4b9cb8e0058b",
+      "comment": "The code from pull request X passed the tests in test Y."
+    },
+    "relationships": {
+      "link_type": {
+        "data": { "type": "linktypes", "id": "40bbdd3d-8b5d-4fd6-ac90-7236b669af04" },
+        "links": {
+          "self": "http://example.com/api/links/c6923e37-5111-4972-8397-a0009c8425a5/relationships/link_type",
+          "related": "http://example.com/api/links/c6923e37-5111-4972-8397-a0009c8425a5/link_type"
+        }
+      }
+    },
+    "links": {
+      "self": "http://example.com/api/links/c6923e37-5111-4972-8397-a0009c8425a5"
+    }
+  }
+}

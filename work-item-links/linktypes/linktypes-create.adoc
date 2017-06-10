@@ -1,0 +1,33 @@
+[[create-link-type]]
+= Create link type
+
+[[create-link-type-request]]
+== Request
+
+In order to create a <<link-type>> in the <<link-category>> `'test'` of a
+fictional subsystem, you would have to request it this way:
+
+[source,json]
+----
+include::examples/linktypes-create.req.txt[]
+----
+
+== Responses
+
+This section contains possible responses for a
+<<create-link-type-request,link type creation request>>.
+
+link:http://jsonapi.org/format/#crud-creating-responses-201[`201 Created`]::
+[source,json]
+----
+include::examples/linktypes-create.res.txt[]
+----
+
+These are also possible return codes:
+
+* link:http://jsonapi.org/format/#crud-creating-responses-202[`202 Accepted`]
+* link:http://jsonapi.org/format/#crud-creating-responses-204[`204 No Content`]
+* link:http://jsonapi.org/format/#crud-creating-responses-403[`403 Forbidden`]
+* link:http://jsonapi.org/format/#crud-creating-responses-404[`404 Not Found`]
+* link:http://jsonapi.org/format/#crud-creating-responses-409[`409 Conflict`]
+* link:http://jsonapi.org/format/#crud-creating-responses-other[Other Responses]

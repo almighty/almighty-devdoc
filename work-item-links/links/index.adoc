@@ -1,0 +1,7 @@
+[[link-resource]]
+= Link resource
+
+include::links-create.adoc[leveloffset=+1]
+include::links-read.adoc[leveloffset=+1]
+include::links-update.adoc[leveloffset=+1]
+include::links-delete.adoc[leveloffset=+1]

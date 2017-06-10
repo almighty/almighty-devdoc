@@ -1,0 +1,22 @@
+[[delete-link-category]]
+= Delete link category
+
+[[delete-link-category-request]]
+== Request
+
+In order to delete <<link-category>>, execute this request.
+
+[source]
+----
+include::examples/linkcategories-delete.req.txt[]
+----
+
+== Responses
+
+These are possible return codes:
+
+* link:http://jsonapi.org/format/#crud-deleting-responses-202[`202 Accepted`]
+* link:http://jsonapi.org/format/#crud-deleting-responses-204[`204 No Content`]
+* link:http://jsonapi.org/format/#crud-deleting-responses-200[`200 OK`]
+* link:http://jsonapi.org/format/#crud-deleting-responses-404[`404 Not Found`]
+* link:http://jsonapi.org/format/#crud-deleting-responses-other[Other Responses]

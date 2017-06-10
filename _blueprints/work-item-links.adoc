@@ -1,0 +1,73 @@
+= Work item links: Design, Storage and REST API
+:doctype: book
+:author: Konrad Kleine
+:toc: left
+:toc-title:Table of Contents
+:toclevels: 2
+:sectnums:
+:experimental:
+
+[abstract]
+= Abstract
+This document describes what the <<link,work item links>> and <<link-types,work
+item link types>> are, and how you can manipulate them via the various REST
+endpoints.
+
+We also explain the reasons we for why we chose the layout as it is planned or
+already implemented. This might involve a deep-dive into the way we store work
+item <<link-types,link types>> and <<link,links>> in our PostgreSQL database.
+
+[[introduction]]
+= Introduction
+
+A work item has different fields depending on its work item type. The work item
+types can be defined by an administrator.
+
+Depending on the a project's needs and the chosen workflow, an administrator can
+setup various work item types like for instance _epic_, _user-story_, _task_,
+and so forth. Those work items alone don't make much sense as long as they are
+not associated in a meaningful manner. For example, an _epic_ can have many
+_user-stories_ as children, which in turn can have one to many _tasks_. But a
+_user-story_ probably isn't going to have an _epic_ as a child. A work item of a
+type _bug_ might block another bug or is a duplicate of another bug.
+
+We call these associations between work items <<link,links>>.
+
+For a full list of terms, see the <<glossary>>.  
+
+include::../work-item-links/glossary.adoc[leveloffset=+1]
+
+include::../work-item-links/part.storage.adoc[]
+
+include::../work-item-links/part.rest.adoc[]
+
+include::../work-item-links/appendix.adoc[]
+
+include::../work-item-links/bibliography.adoc[]
+
+// [[fetch-all-link-types-response]]
+// .Fetch all link types response
+// [source,json]
+// ----
+// 200 OK
+// Content-type: application/vnd.linktypes+json, application/json, text, plain
+// 
+// [{
+//     "id": "1",
+//     "name": "user-story-task-link", 
+//     "desc": "Tasks can be associated with a user story.",
+//     "source": "system.user-story",
+//     "forwardName": "parent",
+//     "target": "system.task",
+//     "reverseName": "child"
+// },
+// {
+//     "id": "2",
+//     "name": "bug-blocker", 
+//     "desc": "The source bug shall prevent the target bug from being closed.",
+//     "source": "system.bug",
+//     "forwardName": "blocks",
+//     "target": "system.bug",
+//     "reverseName": "blocked by"
+// }]
+// ----

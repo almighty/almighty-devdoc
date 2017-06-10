@@ -1,0 +1,25 @@
+POST http://example.com/api/linktypes/ HTTP/1.1
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+
+{
+  "data": {
+    "meta": { "comment": "Note, that the 'id' field is optional for a create request." },
+    "id": "40bbdd3d-8b5d-4fd6-ac90-7236b669af04",
+    "type": "linktypes",
+    "attributes": {
+      "name": "tested-by-link-type",
+      "description": "A test work item can 'test' if a the code in a pull request passes the tests.",
+      "source_type": "test-workitemtype",
+      "target_type": "pull-request-workitemttype",
+      "forward_name": "tests",
+      "reverse_name": "tested by"
+    },
+    "relationships": {
+      "link_category": {
+        "meta": { "comment": "See the creation of link categories for what this ID means" },
+        "data": { "type": "link_category", "id": "6c5610be-30b2-4880-9fec-81e4f8e4fd76" }
+      }
+    }
+  }
+}

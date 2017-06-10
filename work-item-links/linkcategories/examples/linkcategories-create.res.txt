@@ -1,0 +1,17 @@
+HTTP/1.1 201 Created
+Location: http://example.com/api/linkcategories/6c5610be-30b2-4880-9fec-81e4f8e4fd76
+Content-Type: application/vnd.api+json
+
+{
+  "data": {
+    "type": "linkcategories",
+    "id": "6c5610be-30b2-4880-9fec-81e4f8e4fd76",
+    "attributes": {
+      "name": "test",
+      "title": "This category is reserved for link types that belong to the 'test' subsystem."
+    },
+    "links": {
+      "self": "http://example.com/api/linkcategories/6c5610be-30b2-4880-9fec-81e4f8e4fd76"
+    }
+  }
+}

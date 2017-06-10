@@ -1,0 +1,2 @@
+DELETE http://example.com/api/links/c6923e37-5111-4972-8397-a0009c8425a5 HTTP/1.1
+Accept: application/vnd.api+json

@@ -1,0 +1,76 @@
+[[glossary]]
+[glossary]
+= Glossary
+
+The following subsections list important terms when talking about work item links.
+
+[glossary]
+[[link,link]]
+link::
+A link describes a _bidrectional_ relationship between two work items. That
+means there's a defined <<source,source>> work item and a <<target,target>> work
+item in a link. Their work item type is relevant. This allows us to create a
+parent-child relationship among work items, like the one between an _epic_ and a
+_user-story_, like we've explained in the above paragraph.
++
+To realize this concept of a relationship between a source and a target in the
+underlying storage, we will have to define a <<link-type,link type>>.
+
+[[link-type,link type]]
+link type::
+A link type defines what work item types can be linked together and how their
+relationship can be described.
+
+[[link-category,link category]]
+link category::
+A <<link-type>> can have a category like `"system"`, `"extension"`, or `"user"`.
++
+IMPORTANT: A user can only create, update, or delete, links in the `"user"`
+<<link-category>>. Needless to say that a user can only create, update, or
+delete <<link-type,link types>> with the link category `"user"`. This is a
+security mechanism to prevent the user from breaking the system.
+
+[[source,source]]
+source::
+The source defines where the relationship between two work items starts. It
+given as a work item ID. The type of work item that can be used as a source is
+defined by the <<source-type>>. Read more about this in
+<<storage-of-link-types>>.
+
+[[source-type,source type]]
+source type::
+The <<source>> type specifies the type of work item that can be used as a
+<<source>>.
+
+[[target,target]]
+target::
+The target defines where the relationship between two work items ends. It is
+given as a work item ID. The type of work item that can be used as a target is
+defined by the <<target-type>>. Read more about this in <<storage-of-link-types>>.
+
+[[target-type,target type]]
+target type::
+The <<target>> type specifies the type of work item that can be used as a
+<<target>>.
+
+[[forward-name,forward name]]
+forward name::
+The forward oriented path from <<source>> _to_ <<target>> is described with the
+_forward name_. For example, if a bug _blocks_ a user story, the forward name is
+`"blocks"`. See also <<reverse-name>>.
+
+[[reverse-name,reverse name]]
+reverse name::
+The backwards oriented path from <<target>> _to_ <<source>> is described with
+the _reverse name_. For example, if a bug _blocks_ a user story, the reverse
+name name is `"blocked by"` as in: a user story is _blocked by_ a bug. See also
+<<forward-name>>.
+
+[[link-comment,link comment]]
+link comment::
+A link comment is an optional string field on a <<link>> that allows the creator
+of a <<link>> to further specify the relationship. For example, think of a
+fictional `'test'` subsystem that wants to create a link between one of its
+`test-result` work items and a `pull-request` work item. For convenience, it
+makes sense to specify a string like: `"The code from pull request X passed the
+tests in test Y."`.

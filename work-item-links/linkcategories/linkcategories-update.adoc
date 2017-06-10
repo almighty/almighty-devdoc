@@ -1,0 +1,28 @@
+[[update-link-category]]
+= Update link category
+
+[[update-link-category-request]]
+== Request
+
+In order to update <<link-category>>, execute this request.
+
+[source,json]
+----
+include::examples/linkcategories-update.req.txt[]
+----
+
+For more information on updating a resource and not including all attributes, 
+please take a look at the JSON API section
+link:http://jsonapi.org/format/#crud-updating-resource-attributes[here].
+
+== Responses
+
+These are possible return codes:
+
+* link:http://jsonapi.org/format/#crud-updating-responses-202[`202 Accepted`]
+* link:http://jsonapi.org/format/#crud-updating-responses-200[`200 OK`]
+* link:http://jsonapi.org/format/#crud-updating-responses-204[`204 No Content`]
+* link:http://jsonapi.org/format/#crud-updating-responses-403[`403 Forbidden`]
+* link:http://jsonapi.org/format/#crud-updating-responses-404[`404 Not Found`]
+* link:http://jsonapi.org/format/#crud-updating-responses-409[`409 Conflict`]
+* link:http://jsonapi.org/format/#crud-updating-responses-other[Other Responses]

@@ -1,0 +1,5 @@
+[bibliography]
+= Bibliography
+
+- [[[jsonapi-spec]]] JSON API Specification
+  http://jsonapi.org/format/

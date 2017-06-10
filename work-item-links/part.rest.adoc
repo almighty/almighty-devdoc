@@ -1,0 +1,83 @@
+[[rest-interface]]
+= REST interface
+
+The REST interface for work item <<link,links>> lives under its own HTTP endpoint.
+
+When we started the discussion on this topic we planned the REST endpoint to
+live under the `api/workitems/<id>/links` endpoint. At first sight, it might make
+sense to have `api/workitems/42/links` to query all <<link,links>> for the work
+item with ID `42`. But on second thought, this endpoint schema doesn't allow you
+to formulate a query for all blocked bugs because you always have a to have a
+work item ID inside of the URL.
+
+When we decided if <<link,links>> shall live under the REST endpoint `api/links`
+or `api/workitems/links`, the latter endpoint made more sense at first because
+it underlines that a <<link,link>> is meant for work items. But the downside is
+that we cannot have a work item with an ID called `links` because that would be
+addressed with `api/workitems/links`.
+
+Hence, we went with these endpoints:
+
+* `api/links`
+* `api/linktypes`
+* `api/linkcategories`
+
+NOTE: We may implement a convenience endpoint eventually that looks like
+`api/workitems/<id>/links` but it will not be the default way of dealing with
+links for the work item with ID `<id>`.
+
+The following sections deal with the specific endpoints for manipulating all
+defined resources.
+
+The table <<crud-matrix>> gives an overview of all the available actions and
+their appropriate calls to endpoints.
+
+The endpoints satisfy the JSON API specification [jsonapi-spec].
+
+[[crud-matrix]]
+.CRUD matrix
+[cols="d,d,m,m"]
+|===
+|Resource |Action |Method |Endpoint
+
+// Link categories
+
+| <<link-category>> | <<create-link-category,Create>> | POST | api/linkcategories
+| <<link-category>> | <<read-link-category,Fetch single>> | GET | api/linkcategories/<linkcategoryid>
+| <<link-category>> | Fetch all | GET | api/linkcategories 
+| <<link-category>> | <<update-link-category,Update>> | PUT | api/linkcategories/<linkcategoryid>
+
+// Link types
+
+| <<link-type>> | <<create-link-type,Create>> | POST | api/linktypes
+| <<link-type>> | <<read-link-type,Fetch single>> | GET | api/linktypes/<linktypeid>
+| <<link-type>> | Fetch all | GET | api/linktypes 
+| <<link-type>> | <<update-link-type,Update>> | PUT | api/linktypes/<linktypeid>
+
+// Links
+
+| <<link>> | <<create-link,Create>> | POST | api/links 
+| <<link>> | <<read-link,Fetch single>> | GET | api/links/<linkid>
+| <<link>> | Fetch all | GET | api/links 
+| <<link>> | <<update-link,Update>> | PUT | api/links/<linkid>
+|===
+
+IMPORTANT: TODO: Include links like `/api/links/22/linktype` in order to get the link type
+of link with ID 22
+
+In the example requests and responses we use specific UUIDs to refer to:
+
+ - a <<link-category>> (`6c5610be-30b2-4880-9fec-81e4f8e4fd76`),
+ - a <<link-type>> (`40bbdd3d-8b5d-4fd6-ac90-7236b669af04`),
+ - and a <<link>> (`c6923e37-5111-4972-8397-a0009c8425a5`).
+
+In general requests and response for CRUD operations are modeled after the
+requests and responses you can find in the JSONAPI section on
+link:http://jsonapi.org/format/#crud[CRUD].
+
+
+include::linkcategories/index.adoc[leveloffset=+1]
+
+include::linktypes/index.adoc[leveloffset=+1]
+
+include::links/index.adoc[leveloffset=+1]

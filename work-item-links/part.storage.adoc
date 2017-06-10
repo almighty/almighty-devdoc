@@ -1,0 +1,71 @@
+[[storage]]
+= Storage
+
+[[storage-of-link-types]]
+== Storage of link types
+
+A <<link-type,link type>> needs to have an `ID` field for easy referencing. A
+`name` like i.e. `"blocker"` and `description` like `"prevents a bug from being
+closed by another bug"` makes also sense. But at the very least we must also
+specify the work item types for the <<source,source>> and the <<target,target>>.
+
+Since a bidirectional relationship can be viewed from the <<source,source>> or
+the <<target,target>>, it helps to specify words for each direction. Let's say,
+
+> a bug B1 _blocks_ a bug B2.
+
+If we put it the other way around,
+
+> bug B2 _is blocked_ by B1.
+
+We decided to include these words (_blocks_, and _blocked by_) in the
+<<link-type,link type>> and refer to them as the <<forward-name>> and
+<<reverse-name>>.
+
+NOTE: We srongly believe that it helps us with internationalization (_i18n_) in
+the long run to have english words for the <<forward-name>> and
+<<reverse-name>>. With this information we have enough information to generate
+output for a tool like link:https://en.wikipedia.org/wiki/Gettext[gettext] or
+link:https://poedit.net/[Poedit]. But for now the texts just have a descriptive
+purpose.
+
+[[example-link-type-storage-layout]]
+.Example of <<link type>> storage layout
+|===
+| ID| Name | Description | <<source-type>> | <<forward-name>> | <<target-type>> | <<reverse-name>> | <<link-category>>
+| 0| epic-user-story-link | An epic can be the parent of a user story. | system.epic | parent | system.user-story | child | system
+| 1| user-story-task-link | Tasks can be associated with a user story. | system.user-story|parent | system.task | child | system
+| 2| bug-blocker | The source bug shall prevent the target bug from being closed. | system.bug | blocks | system.bug | blocked by | system
+| 3| foo-bar | A <<link-type>> defined by the user | system.foo | ... | system.bar | ... | user
+| 4| related | ... | * | related | * | related | user
+|===
+
+[[storage-of-links]]
+== Storage of links
+
+Storing a work item <<link,link>> is straight forward, now that we've layed out the <<link-type,link types>>.
+
+[[example-link-storage-layout]]
+.Example of link storage layout
+|===
+| ID| <<link-type>> | <<source>> | <<target>> | <<link-comment>> 
+| 0| 2| 42| 333 | n/a
+|===
+
+In the table <<example-link-storage-layout>> we store a <<link,link>> between
+the <<source>> work item with ID `42` and the <<target>> work item with ID
+`333`. Note that the <<link-type>> is `2`, hence it is a `bug-blocker` (See
+table <<example-link-type-storage-layout>>) and the linked work items are bugs
+(`"system.bug"`).
+
+In other words we store the <<link>> that _bug 42_ blocks _bug 333_.
+
+[[link-validation]]
+=== Link validation
+
+On creation of a new <<link>> we must validate that the two work items to be
+linked can actually be linked. That means, a <<link-type>> must exist that has
+the proper <<source>> and <<target>> work items types specified.
+
+IMPORTANT: On the backend side we *MUST NOT* forget to check if we can do
+validation when a work item type changes.
