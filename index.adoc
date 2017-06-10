@@ -18,6 +18,12 @@ We are currently on hipchat (almighty room), with plans on moving to a publicly 
 
 Mailing list - we have a public mailing list `mailto:almighty-public@redhat.com[almighty-public@redhat.com]`.  You may subscribe https://www.redhat.com/mailman/listinfo/almighty-public[here].
 
+== Development
+
+* link:development/planning.html[Planning Process].
+* link:development/dod.html[Definitions of Done] (DoD).
+* link:development/uximplementation.html[UX Implementation Requirments for Userstories].
+
 == Team
 
 [format="csv", options="header"]

@@ -1,0 +1,21 @@
+= Definition of Done and Ambient Requirements
+
+The Definition of Done (DoD) describes the criteria for tasks to be fulfilled in 
+order to be considered done and closed. All of the following criteria must be met:
+
+* Acceptance criteria from the user story are fully implemented and met.
+* Automated tests for the implemented features are in existence, are following the acceptance criteria in full and are running successfully. 
+* Code coverage is not decreased by the implementation and the implementation of the tests.
+* The code (including test code) is properly documented with source code comments
+* The features and design decisions are properly documented in devdoc.
+
+In addition, we have some "ambient requirements" that must be met for all implemented features. These requirements are 
+not contained in the user stories, because they apply to every story by default. The following functional/non-functional requirements
+are mandatory for all implementations:
+
+* The UI implementation follows the UX guidelines in features, usability, and design. If not, state reason (UX not available yet for example).
+* To all web resources in the application can be deep linked to. URL patterns are stable and clean.
+* Any additions or changes to code do not introduce functional, performance/throughput, or security regressions.
+* Integration tests (including install and upgrade tests) must be written and running cleanly in the CI environment.
+* User docs must be complete and reviewed.
+

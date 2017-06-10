@@ -1,0 +1,57 @@
+= Planning Process
+
+We use a well defined process for development of this project. The goal on following the process is to create predictable timelines and
+a way to detect problems early on.
+
+== Grooming
+
+The Grooming meeting is a full team meeting in the first week of the three weeks sprint with the goal of introducing the user stories
+most likely in the next sprint. The team then has the opportunity in the following two weeks until Planning to learn, discuss and
+change the stories. The overall goal of the Grooming is to take pressure off the Planning meetings and to come to a clear
+understanding of the domain and content of the stories before the Planning 1 meeting.
+
+In the Grooming, story owners will be associated with the stories. The owners are responsible for leading the discussion
+on the particular story and to make sure the team is aware of the story. He or she is also the primary contact fo questions
+about the content of the story. The owner associated in the Grooming meight not be the owner associated later in Planning 1.
+
+== Planning 1
+
+The Planning 1 meeting is a full team meeting at the start of a new sprint, usually right after the retrospective for the
+previous sprint. Primary goal is the estimation and acceptance of user stories into the sprint. The Grooming beforehand should
+make sure that discussions about the content of stories are kept to minimum in this meeting. The team is doing a planning poker
+on every story and accepts them into the sprint until there is confidence that the sprint is well filled.
+
+Owners are associated with accepted stories in Planning 1 who are responsible fo the story completion at the end of the sprint.
+Story owners are also the primary contact for the team for questions regarding the content or implementation of the particular
+story. 
+
+The story owner is also responsible to create a baseline task breakdown for the story that can be used as a starting point 
+for the task breakdown discussions in Planning 2.
+
+== Planning 2
+
+The Planning 2 meeting is a team-specific meeting that takes the accepted stories from the Planning 1 and breaks them down into 
+individual tasks. Tasks should have the rough size of a single one-person-day. The team works from the baseline task breakdown
+suggestion created by the story owner after Planning 1. Goal of the Planning 2 meeting is to get a complete breakdown of all
+the work needed for completing the stories.
+
+== Review
+
+The Review is the full team demonstration meeting where all accomplished tasks from the previous sprint are shown to the stakeholders, 
+usually the product owner. The Review follows the accepted stories and demos each of them with the described acceptance
+criterias from the stories. 
+
+== Retrospective
+
+The Retrospective is a full team internal discussion about the past sprint in terms of process execution. Goal is to 
+put the development process under constant observation and improvement.
+
+= Story Owners
+
+Story owners have a great responsibilty of there associated stories. They are responsible for the content of the story as well
+as the team's full understanding of the story contents and the domain. Common questions for story owners are:
+
+* is the story describing a feature too detailed or too generic?
+* is the story too large? So is it still a "reasonable" chunk of focussed work that can be done in a sprint by the team without compromising other implementation work?
+* is the story "exceeding context", does the story implement several different usecases or contexts?
+* is the story iterative in a way that makes sense and considers the future developments and requirements in the domain while not creating lots of throwaway code?
