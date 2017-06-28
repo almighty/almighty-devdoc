@@ -1,5 +1,5 @@
 SOURCE_DIR := $(shell pwd)/../..
-DOCKER_IMAGE_DEVDOC := almighty-devdoc
+DOCKER_IMAGE_DEVDOC := fabric8-devdoc
 
 # The IS_JENKINS will be set depending on if
 # make is executed inside of Jenkins or locally not
@@ -7,7 +7,7 @@ ifneq ($(BUILD_TAG),)
 	IS_JENKINS := "yes"
 	# If running in Jenkins we don't allow for interactively running the container
 	DOCKER_RUN_INTERACTIVE_SWITCH :=
-else 
+else
 	IS_JENKINS :=
 	# If not running in Jenkins we allow for interactively running the container
 	DOCKER_RUN_INTERACTIVE_SWITCH :=  -i
@@ -15,10 +15,10 @@ endif
 
 # The workspace environment is set by Jenkins and defaults to /tmp if not set
 WORKSPACE ?= /tmp
-BUILD_DIR := $(WORKSPACE)/almighty-devdoc-linux-build
+BUILD_DIR := $(WORKSPACE)/fabric8-devdoc-linux-build
 # The BUILD_TAG environment variable will be set by jenkins
 # to reflect jenkins-${JOB_NAME}-${BUILD_NUMBER}
-BUILD_TAG ?= almighty-devdoc-local-build
+BUILD_TAG ?= fabric8-devdoc-local-build
 DOCKER_CONTAINER_NAME := $(BUILD_TAG)
 
 .PHONY: all
@@ -49,7 +49,7 @@ build-dir:
 # Removes any existing container used to build the software (if any)
 clean-docker-container:
 	@echo "Removing container named \"$(DOCKER_CONTAINER_NAME)\" (if any)"
-ifneq ($(strip $(shell docker ps -qa --filter "name=$(DOCKER_CONTAINER_NAME)")),) 
+ifneq ($(strip $(shell docker ps -qa --filter "name=$(DOCKER_CONTAINER_NAME)")),)
 	docker rm -f $(DOCKER_CONTAINER_NAME)
 else
 	@echo "No container named \"$(DOCKER_CONTAINER_NAME)\" to remove"
@@ -66,9 +66,9 @@ clean-build-dir:
 #  - clean-docker-container and
 #  - clean-build-dir
 clean: clean-docker-container clean-build-dir
-	
+
 .PHONY: build
-# Triggers 
+# Triggers
 #  - build-dir and
 #  - docker-image-devdoc
 # and then spawns a docker container to build the software
@@ -85,5 +85,3 @@ build: build-dir docker-image-devdoc
 		-e USERID=$(shell id -u $(USER)) \
 		$(DOCKER_IMAGE_DEVDOC) \
 		/source-dir/jenkins/linux/build.sh /source-dir /build-dir
-
-

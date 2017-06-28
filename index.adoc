@@ -1,8 +1,8 @@
-= Almighty Developer Documentation
+= Fabric8 services Developer Documentation
 
-Welcome to Almighty developer documentation site.
+Welcome to Fabric8 services developer documentation site.
 
-Almighty is a project started by Red Hat to create an opensource ALM covering
+Fabric8 services is a project started by Red Hat to create an opensource ALM covering
 the lifecycle from ideation, development, production to sunsetting of an application.
 
 We are still getting started, so bear with us.
@@ -14,9 +14,9 @@ Some links might not be fully public, but we will get them moved over as soon as
 
 == Communication
 
-We are currently on hipchat (almighty room), with plans on moving to a publicly hosted mattermost or similar platform soon(tm)!
+We are currently on Mattermost (devtools room), with plans on moving to a publicly hosted mattermost or similar platform soon(tm)!
 
-Mailing list - we have a public mailing list `mailto:almighty-public@redhat.com[almighty-public@redhat.com]`.  You may subscribe https://www.redhat.com/mailman/listinfo/almighty-public[here].
+Mailing list - we have a public mailing list `mailto:devtools-saas@redhat.com[devtools-saas@redhat.com]`.  You may subscribe https://www.redhat.com/mailman/listinfo/fabric8-services-public[here].
 
 == Team
 
@@ -57,8 +57,8 @@ https://github.com/xcoulon[Xavier Coulon], Dev, Backend, 100%, CET
 [format="csv", options="header"]
 |===
 Resources, Comment
-http://devdoc.almighty.io/, devdoc website (where this gets published)
+http://devdoc.fabric8-services.io/, devdoc website (where this gets published)
 https://projects.invisionapp.com/share/RD7QIB3QY#/screens[Invision prototypes], Ask Monica about access if you need
 https://trello.com/b/sRsGpP8m/alm-track-manage-design-project[UX Trello], Private - should be moved soon
-https://trello.com/b/MHDVMYyz/team-alm-plan[Team ALM Trello board], Private - should be moved to Almighty ASAP
+https://trello.com/b/MHDVMYyz/team-alm-plan[Team ALM Trello board], Private - should be moved to Fabric8 services ASAP
 |===

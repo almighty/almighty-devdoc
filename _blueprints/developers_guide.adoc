@@ -2,7 +2,7 @@
 
 == Adding new packages
 
-Almighty uses https://glide.sh[Glide] for package management.  To
+Fabric8 services uses https://glide.sh[Glide] for package management.  To
 install a new package, you can follow these steps.  The
 `<PACKAGE_PATH>` should be replaced with the actual package path of the
 package. e.g., `github.com/robfig/cron`
@@ -23,7 +23,7 @@ as it will ensure non-breaking changes are not going to be retrieved
 
 Add `Debug()` function call before  `Save()`, `Create()` etc.
 
-Two examples from Almighty code:
+Two examples from Fabric8 services code:
 
 [source,go]
 if err := tx.Debug().Create(&tq).Error; err != nil {

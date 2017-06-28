@@ -40,8 +40,8 @@ RUN touch /tmp/gpg-agent.conf
 RUN echo 'export GPG_TTY=$(tty); eval $(gpg-agent --daemon --no-use-standard-socket --options /tmp/gpg-agent.conf );' >> ~/.bash_profile
 
 # Add the volume for the actual project
-VOLUME /almighty-devdoc
-WORKDIR /almighty-devdoc
+VOLUME /fabric8-devdoc
+WORKDIR /fabric8-devdoc
 
 EXPOSE 35729 4000
 

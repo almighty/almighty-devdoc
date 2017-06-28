@@ -3,20 +3,20 @@
 
 == Goals of this Document
 
-This document is the output of the preliminary work on the build system concepts. It serves as a guideline for the further development and contains in terms of the build service: 
+This document is the output of the preliminary work on the build system concepts. It serves as a guideline for the further development and contains in terms of the build service:
 
 . Definition and Scope
-. Concept for the Build SPI contract between Almighty and Build Providers
-. Concept for the Build Domain Objects and Service Operations known by Almighty
-. Concept for the operations the Build Service exposes through the Almighty Public API
-. Concept for the integration of Build Provider UI components into Almighty UI
+. Concept for the Build SPI contract between Fabric8 services and Build Providers
+. Concept for the Build Domain Objects and Service Operations known by Fabric8 Services
+. Concept for the operations the Build Service exposes through the Fabric8 services Public API
+. Concept for the integration of Build Provider UI components into Fabric8 services UI
 . Definition of necessary next steps
 
 The definitions in this document are conceptual definitions that must be developed into requirements suitable for implementation. See the #heading=h.9iivc7b8xlgg[Next steps] section for a list of necessary following steps.
 
 == Definition of the Build Service
 
-The Build Service provides user with a scriptable way to *transform* repository source *code* into artifacts, actions, or both. 
+The Build Service provides user with a scriptable way to *transform* repository source *code* into artifacts, actions, or both.
 
 To be more specific let’s look at a specific scenario covered by Build Service:
 
@@ -41,12 +41,12 @@ Although there will be different providers in the future, we will start by imple
 
 The scope of the build system contains two distinct components or areas which can be worked on in parallel:
 
-* *Almighty Build Service* 
+* *Fabric8 services Build Service*
 +
-The service integrated in the Almighty core that holds the build lifecycle/processes and provides the SPI and API.
+The service integrated in the Fabric8 services core that holds the build lifecycle/processes and provides the SPI and API.
 +
 
-* *OpenShift Build provider (OSBP)* 
+* *OpenShift Build provider (OSBP)*
 +
 An implementation of the SPI with OpenShift as build provider with the service-level integration parts.
 
@@ -54,7 +54,7 @@ The scope of this document is to define basic concepts and contract requirements
 
 == Userstories
 
-The overall workflow defines outlines of possible user stories for the Almighty system. They describe the possible actions users can take on the build system from the users perspective.
+The overall workflow defines outlines of possible user stories for the Fabric8 services system. They describe the possible actions users can take on the build system from the users perspective.
 
 === S01 Registering Build Providers
 
@@ -86,11 +86,11 @@ image::projectbuildconfigdataflow.png["Project Build Configuration Data Flow",fl
 
 The details of the deployment (Canary, Blue-Green or other) is determined by the build configuration and is out-of-scope of the ALM build system. Also, the build system contains no dependency management for build jobs on multi-repository projects. So there is no means of configuring followup builds in the ALM system. It is possible, though, that the build itself, configured in the build configuration files, triggers a followup build using some means, possibly a later webhook in the ALM system.
 
-*For private GitHub repositories*.footnote:[ see mailing list discussion here: https://www.redhat.com/archives/almighty-public/2016-October/msg00110.html&sa=D&ust=1477567580676000&usg=AFQjCNEA1AUUb8L54soCYBUBN5V75dq3Hw[https://www.redhat.com/archives/almighty-public/2016-October/msg00110.html&sa=D&ust=1477567580676000&usg=AFQjCNEA1AUUb8L54soCYBUBN5V75dq3Hw]], the project configuration contains a ssh secret key that is used to access the private repository. The user gets a notification with the public key and is noted that he has to add the public key to the deploy keys on his git provider. As this procedure is not specific for OpenShift or GitHub, the needed UI dialogs are also generic. As an option, if the repository and/or build provider supports this, the key exchange can be done automatically via a provided API.footnote:[ For example: https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key[https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key]].
+*For private GitHub repositories*.footnote:[ see mailing list discussion here: https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00110.html&sa=D&ust=1477567580676000&usg=AFQjCNEA1AUUb8L54soCYBUBN5V75dq3Hw[https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00110.html&sa=D&ust=1477567580676000&usg=AFQjCNEA1AUUb8L54soCYBUBN5V75dq3Hw]], the project configuration contains a ssh secret key that is used to access the private repository. The user gets a notification with the public key and is noted that he has to add the public key to the deploy keys on his git provider. As this procedure is not specific for OpenShift or GitHub, the needed UI dialogs are also generic. As an option, if the repository and/or build provider supports this, the key exchange can be done automatically via a provided API.footnote:[ For example: https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key[https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key]].
 
 === S04 Starting and Controlling Build Processes
 
-A user has basic control over the build process. The user can start and cancel/stop the build process using the UI. He can also see the current state of a process instance (“running”, “successfully terminated”, “failed terminated”). Using a history, the user can see which builds have been executed before. 
+A user has basic control over the build process. The user can start and cancel/stop the build process using the UI. He can also see the current state of a process instance (“running”, “successfully terminated”, “failed terminated”). Using a history, the user can see which builds have been executed before.
 
 image::startstopbuild.png["Starting/Stopping Build",float="center"]
 
@@ -108,7 +108,7 @@ This section describes the components the system needs to provide or expects fro
 
 === ALM Build Service
 
-The Build Service is the ALM-side component that controls the build process. It represents the core module inside the ALM system that directly communicates with the build UI on one side and with the server side SPI implementation on the other side. 
+The Build Service is the ALM-side component that controls the build process. It represents the core module inside the ALM system that directly communicates with the build UI on one side and with the server side SPI implementation on the other side.
 
 The Build Service implements the basic processes involving registering/creating a build configuration, starting and stopping a build and getting runtime informations about build processes. The Build Service is the controlling entity in these processes.
 
@@ -130,15 +130,15 @@ As the provider-specific configuration is contained in the editable configuratio
 
 The ALM Build Service contains a Service Provider Interface (SPI) that interconnects the ALM Build Service to the (possibly) 3rd party build providers using a well defined interface. The interface consists of a technical REST api, a procedure for registering new build providers to the ALM Build Service and a set of interactions modelled as REST flows for the various user operations (see above).
 
-==== SPI Architecture.footnote:[ Discussion on different approaches here: https://www.google.com/url?q=https://www.redhat.com/archives/almighty-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA[https://www.google.com/url?q=https://www.redhat.com/archives/almighty-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA]]
+==== SPI Architecture.footnote:[ Discussion on different approaches here: https://www.google.com/url?q=https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA[https://www.google.com/url?q=https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA]]
 
 The SPI is modelled following a “consumer” model. The SPI defines a set of REST operations that are consumed from the actual build provider. So the SPI expects the build provider (or an intermediate party) to provide this interface for consumption.
 
-==== Logical SPI Operations.footnote:[ Preliminary specification here: https://www.google.com/url?q=https://github.com/tnozicka/almighty-devdoc/blob/add-build-spi-definition/design/build_spi.adoc&sa=D&ust=1478189307979000&usg=AFQjCNGzUBbihwXQH4rvWNoRfTY0w48kBA[https://www.google.com/url?q=https://github.com/tnozicka/almighty-devdoc/blob/add-build-spi-definition/design/build_spi.adoc&sa=D&ust=1478189307979000&usg=AFQjCNGzUBbihwXQH4rvWNoRfTY0w48kBA]]
+==== Logical SPI Operations.footnote:[ Preliminary specification here: https://www.google.com/url?q=https://github.com/tnozicka/fabric8-devdoc/blob/add-build-spi-definition/design/build_spi.adoc&sa=D&ust=1478189307979000&usg=AFQjCNGzUBbihwXQH4rvWNoRfTY0w48kBA[https://www.google.com/url?q=https://github.com/tnozicka/fabric8-devdoc/blob/add-build-spi-definition/design/build_spi.adoc&sa=D&ust=1478189307979000&usg=AFQjCNGzUBbihwXQH4rvWNoRfTY0w48kBA]]
 
 The SPI defines operations for the user stories above. Note that the following list only describes logical operations that may be different (or removed) in a final SPI specification:
 
-* *CONNECT* 
+* *CONNECT*
 +
 Onetime association/connection of user accounts in ALM and 3rd party build provider. This might be a series of operations. (See S02 above).
 +
@@ -146,7 +146,7 @@ PRECONDITION: none.
 +
 POSTCONDITION: token/authN info for the build provider known to ALM.
 
-* *DISCONNECT* 
+* *DISCONNECT*
 +
 Disconnection of previously associated accounts.
 +
@@ -154,7 +154,7 @@ PRECONDITION: associated accounts (with CONNECT) with stored data.
 +
 POSTCONDITION: removed authN credentials/data on both sides of the SPI interfacing.
 
-* *CREATE_BUILD_CONFIG* 
+* *CREATE_BUILD_CONFIG*
 +
 Creates a build configuration in the repository (in the form of files) and stores the build configuration parameters in storage.
 +
@@ -164,7 +164,7 @@ POSTCONDITION: build configuration in repository, parameters in storage, possibl
 +
 NOTE: updating build configuration is omitted on this abstraction level, has to be present in implementation.
 
-* *START_BUILD* 
+* *START_BUILD*
 +
 Starts a build using the build config created previously.
 +
@@ -179,7 +179,7 @@ PRECONDITION: created and selected build config (using CREATE_BUILD_CONFIG), run
 +
 POSTCONDITION: running build with handle to getting info on/controlling it.
 
-* *GET_BUIL* *D* *_STATUS* 
+* *GET_BUIL* *D* *_STATUS*
 +
 Gets a status on a running build created using the build config created previously.
 +
@@ -195,7 +195,7 @@ PRECONDITION: created and selected build config (using CREATE_BUILD_CONFIG), sel
 POSTCONDITION: retrieved build/console log.
 
 * *GET_BUILD_ARTIFACT* +
-Retrieves a build artifact after a build has ended. Build artifacts can be of different type. For example, the test log is also a build artifact that can be retrieved. Note: this interface will likely be multiple methods for retrieving multiple artifacts with different types, like retrieve indexes, artifacts by type or other means. 
+Retrieves a build artifact after a build has ended. Build artifacts can be of different type. For example, the test log is also a build artifact that can be retrieved. Note: this interface will likely be multiple methods for retrieving multiple artifacts with different types, like retrieve indexes, artifacts by type or other means.
 +
 A returned build artifact includes the type and the build artifact data or a link to a resource.
 +
@@ -213,7 +213,7 @@ We need to define next steps for making the build service a reality. The goal of
 
 For the next sprints, the following definitions have to be made:
 
-* *SPI Interfacing* 
+* *SPI Interfacing*
 +
 The overall architecture for the build system and the communication flows between the components on a detailed level.
 
@@ -223,7 +223,7 @@ AuthN (and possibly AuthZ) definitions and their control and data flows on a det
 * *SPI API* +
 The REST api that is provided by the build providers.
 
-* *Internal Build Service API* 
+* *Internal Build Service API*
 +
 The internal API provided by the build system to the rest of the ALM system.
 

@@ -18,10 +18,10 @@ source_dir=${1:-/source}
 build_dir=${2:-/build}
 
 # Give all rights to users outside of the container
-function almighty_clean_up {
-  chown -R $USER ${build_dir} 
+function fabric8_services_clean_up {
+  chown -R $USER ${build_dir}
 }
-trap 'echo "SIGNAL received. Will clean up."; almighty_clean_up' SIGUSR1 SIGTERM SIGINT EXIT
+trap 'echo "SIGNAL received. Will clean up."; fabric8_services_clean_up' SIGUSR1 SIGTERM SIGINT EXIT
 
 su $USER --command=" \
 cd ${source_dir} \
@@ -32,4 +32,3 @@ cd ${source_dir} \
 && bundle install --path=${build_dir}/bundle-install \
 && bundle exec jekyll build \
 "
-

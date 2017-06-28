@@ -1,12 +1,12 @@
 # jekyll configuration
 host: 0.0.0.0
 
-title: "Almighty-devdoc"
+title: "Fabric8-devdoc"
 
 exclude:
   - Dockerfile
   - serve.sh
-  
+
 collections:
   blueprints:
     output: true
