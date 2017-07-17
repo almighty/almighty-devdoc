@@ -11,23 +11,23 @@ image::invision-link.png[]
 _*(artifacts include materials related to the design, discovery, workflows, wireframes, prototypes, visuals…)_
 
 . Post *InVision links* in the UXD JIRA stories
-. Post JIRA link in GIT story in almighty-ux
-- Once your story is pulled into an AppDev sprint, create an issue that includes a link to the JIRA story on https://github.com/almighty/almighty-ux/issues[https://github.com/almighty/almighty-ux/issues].
+. Post JIRA link in GIT story in fabric8-ux
+- Once your story is pulled into an AppDev sprint, create an issue that includes a link to the JIRA story on https://github.com/fabric8-services/fabric8-ux/issues[https://github.com/fabric8-services/fabric8-ux/issues].
 . Post artifact links in GIT devdocs
   .. Based on the type of artifact you want to link to, determine which ASCII doc** should be updated.
 
 +
-     - Wireframes: link:almighty-devdoc/ux/design/wireframes/wireframes.adoc[almighty-devdoc/ux/design/wireframes/wireframes.adoc]
+     - Wireframes: link:fabric8-devdoc/ux/design/wireframes/wireframes.adoc[fabric8-devdoc/ux/design/wireframes/wireframes.adoc]
 +
-     - Workflows: link:almighty-devdoc/ux/design/workflows/workflows.adoc[almighty-devdoc/ux/design/workflows/workflows.adoc]
+     - Workflows: link:fabric8-devdoc/ux/design/workflows/workflows.adoc[fabric8-devdoc/ux/design/workflows/workflows.adoc]
 +
-     - Visuals: link:almighty-devdoc/ux/design/visuals/visuals.adoc[almighty-devdoc/ux/design/visuals/visuals.adoc]
+     - Visuals: link:fabric8-devdoc/ux/design/visuals/visuals.adoc[fabric8-devdoc/ux/design/visuals/visuals.adoc]
 +
-- Discovery: link:almighty-devdoc/ux/discovery/discovery-overview.adoc[almighty-devdoc/ux/discovery/discovery-overview.adoc]
+- Discovery: link:fabric8-devdoc/ux/discovery/discovery-overview.adoc[fabric8-devdoc/ux/discovery/discovery-overview.adoc]
 +
-- Strategy: link:almighty-devdoc/ux/strategy/strategy-overview.adoc[almighty-devdoc/ux/strategy/strategy-overview.adoc]
+- Strategy: link:fabric8-devdoc/ux/strategy/strategy-overview.adoc[fabric8-devdoc/ux/strategy/strategy-overview.adoc]
 +
-- Usability: link:almighty-devdoc/ux/usability-testing/usability-overview.adoc[almighty-devdoc/ux/usability-testing/usability-overview.adoc]
+- Usability: link:fabric8-devdoc/ux/usability-testing/usability-overview.adoc[fabric8-devdoc/ux/usability-testing/usability-overview.adoc]
 
   .. Update the document to include a link to the artifact and a brief description of what it contains.
 
@@ -38,11 +38,11 @@ _*(artifacts include materials related to the design, discovery, workflows, wire
 Once a design artifact (whether new or updated) has been posted to InVision, let the team know that it is ready for review.
 
 . Post to HipChat
-* On the Almighty UI/UX channel using @all, the *InVision link*, and a brief message.
-* On the Almighty channel using @here, the *InVision link*, and a brief message.
+* On the Fabric8 services UI/UX channel using @all, the *InVision link*, and a brief message.
+* On the Fabric8 services channel using @here, the *InVision link*, and a brief message.
 . Post to email lists
-* Internal: Post here any sensitive materials to share with the internal group and/or when a design is in progress and you are working with development on specific solution issues:  mailto:devtools-almighty@redhat.com[devtools-almighty@redhat.com]
-* External: Post here when you have vetted the design through UXD and are ready for broader/public/community feedback: mailto:almighty-public@redhat.com[almighty-public@redhat.com]
+* Internal: Post here any sensitive materials to share with the internal group and/or when a design is in progress and you are working with development on specific solution issues:  mailto:devtools-saas@redhat.com[devtools-saas@redhat.com]
+* External: Post here when you have vetted the design through UXD and are ready for broader/public/community feedback: mailto:fabric8@googlegroups.com[fabric8@googlegroups.com]
 
 == Communicate that designs are ready for dev
 

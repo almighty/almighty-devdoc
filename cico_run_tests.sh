@@ -20,10 +20,10 @@ service docker start
 rm -rf _site
 
 # Build builder image
-docker build -t almighty-devdoc-builder -f Dockerfile .
+docker build -t fabric8-devdoc-builder -f Dockerfile .
 
 # Build site
-docker run --detach=true --name=almighty-devdoc-builder -t -v $(pwd):/almighty-devdoc:Z almighty-devdoc-builder "jekyll build"
+docker run --detach=true --name=fabric8-devdoc-builder -t -v $(pwd):/fabric8-devdoc:Z fabric8-devdoc-builder "jekyll build"
 
 # TODO: Test ?
 
