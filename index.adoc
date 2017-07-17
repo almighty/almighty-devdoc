@@ -14,9 +14,9 @@ Some links might not be fully public, but we will get them moved over as soon as
 
 == Communication
 
-We are currently on Mattermost (devtools room), with plans on moving to a publicly hosted mattermost or similar platform soon(tm)!
+We are currently on Mattermost (openshiftio room) in `chat.openshift.io`.
 
-Mailing list - we have a public mailing list `mailto:devtools-saas@redhat.com[devtools-saas@redhat.com]`.  You may subscribe https://www.redhat.com/mailman/listinfo/fabric8-services-public[here].
+Google groups - we have a google group `mailto:fabric8@googlegroups.com[fabric8@googlegroups.com]`.
 
 == Team
 

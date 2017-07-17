@@ -44,7 +44,7 @@ cp -rfv _site/* .
 
 # Update new repo with generated code
 git config user.name "ci.centos.org"
-git config user.email "fabric8-services-public@redhat.com"
+git config user.email "fabric8@googlegroups.com"
 git add --ignore-removal --all .
 
 #TODO add more context to msg

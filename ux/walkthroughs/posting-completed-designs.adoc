@@ -42,7 +42,7 @@ Once a design artifact (whether new or updated) has been posted to InVision, let
 * On the Fabric8 services channel using @here, the *InVision link*, and a brief message.
 . Post to email lists
 * Internal: Post here any sensitive materials to share with the internal group and/or when a design is in progress and you are working with development on specific solution issues:  mailto:devtools-saas@redhat.com[devtools-saas@redhat.com]
-* External: Post here when you have vetted the design through UXD and are ready for broader/public/community feedback: mailto:devtools-saas@redhat.com[devtools-saas@redhat.com]
+* External: Post here when you have vetted the design through UXD and are ready for broader/public/community feedback: mailto:fabric8@googlegroups.com[fabric8@googlegroups.com]
 
 == Communicate that designs are ready for dev
 

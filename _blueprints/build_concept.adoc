@@ -86,7 +86,6 @@ image::projectbuildconfigdataflow.png["Project Build Configuration Data Flow",fl
 
 The details of the deployment (Canary, Blue-Green or other) is determined by the build configuration and is out-of-scope of the ALM build system. Also, the build system contains no dependency management for build jobs on multi-repository projects. So there is no means of configuring followup builds in the ALM system. It is possible, though, that the build itself, configured in the build configuration files, triggers a followup build using some means, possibly a later webhook in the ALM system.
 
-*For private GitHub repositories*.footnote:[ see mailing list discussion here: https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00110.html&sa=D&ust=1477567580676000&usg=AFQjCNEA1AUUb8L54soCYBUBN5V75dq3Hw[https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00110.html&sa=D&ust=1477567580676000&usg=AFQjCNEA1AUUb8L54soCYBUBN5V75dq3Hw]], the project configuration contains a ssh secret key that is used to access the private repository. The user gets a notification with the public key and is noted that he has to add the public key to the deploy keys on his git provider. As this procedure is not specific for OpenShift or GitHub, the needed UI dialogs are also generic. As an option, if the repository and/or build provider supports this, the key exchange can be done automatically via a provided API.footnote:[ For example: https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key[https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key]].
 
 === S04 Starting and Controlling Build Processes
 
@@ -130,11 +129,9 @@ As the provider-specific configuration is contained in the editable configuratio
 
 The ALM Build Service contains a Service Provider Interface (SPI) that interconnects the ALM Build Service to the (possibly) 3rd party build providers using a well defined interface. The interface consists of a technical REST api, a procedure for registering new build providers to the ALM Build Service and a set of interactions modelled as REST flows for the various user operations (see above).
 
-==== SPI Architecture.footnote:[ Discussion on different approaches here: https://www.google.com/url?q=https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA[https://www.google.com/url?q=https://www.redhat.com/archives/fabric8-services-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA]]
+==== SPI Architecture.footnote:[ Discussion on different approaches here: https://www.google.com/url?q=https://www.redhat.com/archives/almighty-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA[https://www.google.com/url?q=https://www.redhat.com/archives/almighty-public/2016-October/msg00128.html&sa=D&ust=1478189307991000&usg=AFQjCNHaozEeVwWN0yJqaso6RREngoUtyA]]
 
 The SPI is modelled following a “consumer” model. The SPI defines a set of REST operations that are consumed from the actual build provider. So the SPI expects the build provider (or an intermediate party) to provide this interface for consumption.
-
-==== Logical SPI Operations.footnote:[ Preliminary specification here: https://www.google.com/url?q=https://github.com/tnozicka/fabric8-devdoc/blob/add-build-spi-definition/design/build_spi.adoc&sa=D&ust=1478189307979000&usg=AFQjCNGzUBbihwXQH4rvWNoRfTY0w48kBA[https://www.google.com/url?q=https://github.com/tnozicka/fabric8-devdoc/blob/add-build-spi-definition/design/build_spi.adoc&sa=D&ust=1478189307979000&usg=AFQjCNGzUBbihwXQH4rvWNoRfTY0w48kBA]]
 
 The SPI defines operations for the user stories above. Note that the following list only describes logical operations that may be different (or removed) in a final SPI specification:
 

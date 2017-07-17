@@ -1,4 +1,4 @@
-[![Swagger](https://online.swagger.io/validator?url=https://github.com/tnozicka/fabric8-devdoc/raw/add-build-spi-definition/design/api/build-spi/swagger.yaml)](http://online.swagger.io/validator?url=https://github.com/tnozicka/fabric8-devdoc/raw/add-build-spi-definition/design/api/build-spi/swagger.yaml)
+[![Swagger](https://online.swagger.io/validator?url=https://raw.githubusercontent.com/fabric8-services/fabric8-devdoc/master/design/api/build-spi/swagger.yaml)](http://online.swagger.io/validator?url=https://raw.githubusercontent.com/fabric8-services/fabric8-devdoc/master/design/api/build-spi/swagger.yaml)
 
 # Editing
 You may use [http://editor.swagger.io/](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/fabric8-services/fabric8-devdoc/master/design/api/build-spi/swagger.yaml)  or any editor of your choice.
