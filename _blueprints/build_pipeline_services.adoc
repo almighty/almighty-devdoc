@@ -1,0 +1,21 @@
+= Build pipeline information
+
+[plantuml,build-pipeline-information]
+....
+(*) --> "PR goes to fabric8 planner github repo" as pr
+
+pr --> "Build runs on GKE. Uses [[https://github.com/fabric8io/fabric8-pipeline-library fabric8-pipeline-library]]" as gke
+
+gke -->  "create a snapshot on [[badger.fabric8.io:8443/console badger cluster]] and Run [[https://jenkins.cd.test.fabric8.io/job/fabric8-ui/job/fabric8-planner/ functional test runs]] on GKE" as snapshot
+
+snapshot --> "After review it is merged to Master" as master
+
+master --> "Runs test to make sure master branch is sane" as test
+
+test --> "Release npm packages to npm registry"  as releasenpm
+
+releasenpm --> "Update fabric8 npm dependancies which fabric8-ui uses" as updatenpm
+
+updatenpm --> "The new npm only gets deployed when fabric-ui is re-deployed . fabric8-ui deployed as container" as containerdeploy
+....
+
